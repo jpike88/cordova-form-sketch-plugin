@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-form-sketch-plugin" version="0.0.1">
+    <name>AquipaFormSketchPlugin</name>
+
+    <description>Aquipa form sketch plugin.</description>
+    <license>MIT</license>
+
+    <keywords>cordova,android,toast,message,alert</keywords>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <js-module src="www/cordovaFormSketchPlugin.js" name="cordovaFormSketchPlugin">
+        <clobbers target="window.plugins.CordovaFormSketchPlugin" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="cordovaFormSketchPlugin">
+                <param name="android-package" value="com.aquipa.cordova.plugin.cordovaFormSketchPlugin" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/cordovaFormSketchPlugin.java" target-dir="src/com/aquipa/cordova/plugin" />
+    </platform>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="cordovaFormSketchPlugin">
+                <param name="ios-package" value="FPSketch" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/BOSImageResizeOperation.h" />
+        <source-file src="src/ios/BOSImageResizeOperation.m" />
+        <header-file src="src/ios/CollectionViewController.h" />
+        <source-file src="src/ios/CollectionViewController.m" />
+        <header-file src="src/ios/ECS189DrawingViewController.h" />
+        <source-file src="src/ios/ECS189DrawingViewController.m" />
+        <header-file src="src/ios/FPSketch.h" />
+        <source-file src="src/ios/FPSketch.m" />
+        <header-file src="src/ios/FPSketchScrollView.h" />
+        <source-file src="src/ios/FPSketchScrollView.m" />
+        <header-file src="src/ios/myShape.h" />
+        <source-file src="src/ios/myShape.m" />
+        <header-file src="src/ios/myUIPickerViewController.h" />
+        <source-file src="src/ios/myUIPickerViewController.m" />
+        <header-file src="src/ios/SketchCompass.h" />
+        <source-file src="src/ios/SketchCompass.m" />
+        <header-file src="src/ios/StampImage.h" />
+        <source-file src="src/ios/StampImage.m" />
+
+        <resource-file src="src/ios/CollectionViewController.xib" />
+        <resource-file src="src/ios/ECS189DrawingView.xib" />
+        <resource-file src="src/ios/icon_circle.png" />
+        <resource-file src="src/ios/icon_line.png" />
+        <resource-file src="src/ios/icon_rectangle.png" />
+        <resource-file src="src/ios/north.png" />
+        <resource-file src="src/ios/StampCell.xib" />
+
+    </platform>
+
+</plugin>

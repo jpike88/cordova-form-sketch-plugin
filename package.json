@@ -1,0 +1,19 @@
+{
+  "name": "cordova-form-sketch-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpike88/cordova-form-sketch-plugin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpike88/cordova-form-sketch-plugin/issues"
+  },
+  "homepage": "https://github.com/jpike88/cordova-form-sketch-plugin#readme"
+}

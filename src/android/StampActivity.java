@@ -1,6 +1,7 @@
-package com.formpigeon.cordova.plugin.cordovaFormSketchPlugin;
+package com.formpigeon.sketch;
+import android.app.Application;
+import android.content.res.Resources;
 import com.google.gson.Gson;
-
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
@@ -28,6 +29,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import java.util.ArrayList;
 import java.util.List;
 import android.widget.GridView;
+import com.formpigeon.formpigeon.R;
 
 /**
  * Created by joshua on 26/01/2016.
@@ -38,9 +40,7 @@ public class StampActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stamp_activity);
-        //String jsonToConvert = getString(R.string.sampleJSONList);
         Bundle extras = getIntent().getExtras();
-        //System.out.println(extras.getE)
 
         String valStrings = getIntent().getExtras().getString("stampValues");
         String titleStrings = getIntent().getExtras().getString("stampTitles");

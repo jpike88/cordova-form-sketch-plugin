@@ -1,4 +1,4 @@
-package com.formpigeon.cordova.plugin.cordovaFormSketchPlugin;
+package com.formpigeon.sketch;
 
 import android.content.Context;
 import android.graphics.Canvas;

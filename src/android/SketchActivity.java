@@ -1,8 +1,10 @@
-package com.formpigeon.cordova.plugin.cordovaFormSketchPlugin;
-
+package com.formpigeon.sketch;
+import android.app.Application;
+import android.content.res.Resources;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
+import com.formpigeon.formpigeon.R;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
@@ -48,7 +50,7 @@ import com.google.gson.Gson;
 import com.formpigeon.sketch.ResultIPC;
 import java.util.concurrent.ExecutorService;
 
-public class SketchActivity extends CordovaActivity{
+public class SketchActivity extends CordovaActivity {
 
     private FloatingActionButton fab1;
     private FloatingActionButton fab2;
@@ -63,6 +65,7 @@ public class SketchActivity extends CordovaActivity{
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sketch_activity);
 
@@ -207,8 +210,6 @@ public class SketchActivity extends CordovaActivity{
         return super.onOptionsItemSelected(item);
     }
 
-    //    menu3.getMenuIconView().setImageResource(menu3.isOpened()
-//    ? R.drawable.ic_close : R.drawable.ic_star);
     private void openClearDialog (){
 
 

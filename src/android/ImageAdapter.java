@@ -1,4 +1,6 @@
-package com.formpigeon.cordova.plugin.cordovaFormSketchPlugin;
+package com.formpigeon.sketch;
+import android.app.Application;
+import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.widget.BaseAdapter;
 import android.content.Context;
@@ -9,6 +11,8 @@ import android.util.Base64;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import com.formpigeon.sketch.ImageCaption;
+import com.formpigeon.formpigeon.R;
+
 import java.util.ArrayList;
 import android.widget.TextView;
 
@@ -52,6 +56,5 @@ public class ImageAdapter extends BaseAdapter {
 
         return convertView;
     }
-
 
 }

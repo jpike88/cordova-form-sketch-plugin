@@ -1,13 +1,10 @@
-package com.formpigeon.cordova.plugin.cordovaFormSketchPlugin;
+package com.formpigeon.sketch;
 
 import org.apache.cordova.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 import android.content.Intent;
 import com.google.gson.Gson;
-import com.uservoice.uservoicesdk.*;
-import com.uservoice.uservoicesdk.Config;
-import com.uservoice.uservoicesdk.activity.PortalActivity;
 import com.formpigeon.sketch.ResultIPC;
 import android.app.Activity;
 import android.content.Context;
@@ -20,7 +17,7 @@ public class cordovaFormSketchPlugin extends CordovaPlugin {
     private List stampValues = new ArrayList();
     private List stampTitles = new ArrayList();
     private CallbackContext cbc  = null;
-    private Config uservoiceConfig = null;
+    
     @Override
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
         final Context context=this.cordova.getActivity().getApplicationContext();
@@ -58,25 +55,9 @@ public class cordovaFormSketchPlugin extends CordovaPlugin {
             stampValues.add(data.get(0));
             stampTitles.add(data.get(1));
 
-            callbackContext.success("derp");
+            callbackContext.success();
 
             return true;
-
-        } else if (action.equals("showHelpTopics")) {
-
-            this.cordova.startActivityForResult((CordovaPlugin) this, new Intent(context, PortalActivity.class), 0x0ba7c0de);
-
-        } else if (action.equals("initHelp")) {
-
-            uservoiceConfig = new Config("reportwriter.uservoice.com");
-            uservoiceConfig.setForumId(216495);
-            UserVoice.init(uservoiceConfig, context);
-
-
-
-        } else if(action.equals("configHelp")){
-
-            uservoiceConfig.identifyUser(String.valueOf(data.get(0)), (String)data.get(1) + " " + (String)data.get(2), (String)data.get(3));
 
         }
         return false;

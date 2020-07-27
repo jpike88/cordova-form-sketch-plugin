@@ -15,23 +15,94 @@
         <clobbers target="window.plugins.CordovaFormSketchPlugin" />
     </js-module>
     <platform name="android">
+
+        <framework src="com.github.clans:fab:1.6.2" />
+        <framework src="com.google.code.gson:gson:2.3" />
+        <framework src="com.android.support:appcompat-v7:28.0.0" />
+
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="cordovaFormSketchPlugin">
-                <param name="android-package" value="com.formpigeon.cordova.plugin.cordovaFormSketchPlugin" />
+                <param name="android-package" value="com.formpigeon.sketch.cordovaFormSketchPlugin" />
             </feature>
         </config-file>
 
-        <source-file src="src/android/cordovaFormSketchPlugin.java" target-dir="src/com/formpigeon/cordova/plugin" />
-        <source-file src="src/android/CanvasView.java" target-dir="src/com/formpigeon/cordova/plugin" />
-        <source-file src="src/android/ImageAdapter.java" target-dir="src/com/formpigeon/cordova/plugin" />
-        <source-file src="src/android/ImageCaption.java" target-dir="src/com/formpigeon/cordova/plugin" />
-        <source-file src="src/android/ResultIPC.java" target-dir="src/com/formpigeon/cordova/plugin" />
-        <source-file src="src/android/SketchActivity.java" target-dir="src/com/formpigeon/cordova/plugin" />
-        <source-file src="src/android/StampActivity.java" target-dir="src/com/formpigeon/cordova/plugin" />
-        <source-file src="src/android/StampBitmap.java" target-dir="src/com/formpigeon/cordova/plugin" />
-        <source-file src="src/android/StartingBitmap.java" target-dir="src/com/formpigeon/cordova/plugin" />
-        <source-file src="src/android/TextStamp.java" target-dir="src/com/formpigeon/cordova/plugin" />
-        <source-file src="src/android/ZoomableViewGroup.java" target-dir="src/com/formpigeon/cordova/plugin" />
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="com.formpigeon.sketch.SketchActivity" android:screenOrientation="sensorLandscape"></activity>
+            <activity android:name="com.formpigeon.sketch.StampActivity" android:screenOrientation="sensorLandscape"></activity>
+        </config-file>
+
+        <source-file src="src/android/cordovaFormSketchPlugin.java" target-dir="src/com/formpigeon/sketch" />
+        <source-file src="src/android/CanvasView.java" target-dir="src/com/formpigeon/sketch" />
+        <source-file src="src/android/ImageAdapter.java" target-dir="src/com/formpigeon/sketch" />
+        <source-file src="src/android/ImageCaption.java" target-dir="src/com/formpigeon/sketch" />
+        <source-file src="src/android/ResultIPC.java" target-dir="src/com/formpigeon/sketch" />
+        <source-file src="src/android/SketchActivity.java" target-dir="src/com/formpigeon/sketch" />
+        <source-file src="src/android/StampActivity.java" target-dir="src/com/formpigeon/sketch" />
+        <source-file src="src/android/StampBitmap.java" target-dir="src/com/formpigeon/sketch" />
+        <source-file src="src/android/StartingBitmap.java" target-dir="src/com/formpigeon/sketch" />
+        <source-file src="src/android/TextStamp.java" target-dir="src/com/formpigeon/sketch" />
+        <source-file src="src/android/ZoomableViewGroup.java" target-dir="src/com/formpigeon/sketch" />
+
+        <resource-file src="src/android/resources/sketch_activity.xml" target="res/layout/sketch_activity.xml" />
+        <resource-file src="src/android/resources/stamp_activity.xml" target="res/layout/stamp_activity.xml" />
+        <resource-file src="src/android/resources/stamp_item.xml" target="res/layout/stamp_item.xml" />
+        <resource-file src="src/android/resources/menu_main.xml" target="res/layout/menu_main.xml" />
+
+        <resource-file src="src/android/anim/jump_from_down.xml" target="res/anim/jump_from_down.xml" />
+        <resource-file src="src/android/anim/jump_to_down.xml" target="res/anim/jump_to_down.xml" />
+
+        <resource-file src="src/android/drawable/fab_label_background.xml" target="res/drawable/fab_label_background.xml" />
+        <resource-file src="src/android/drawable-v21/fab_label_background.xml" target="res/drawable-v21/fab_label_background.xml" />
+
+        <resource-file src="src/android/drawable-hdpi/fab_add.png" target="res/drawable-hdpi/fab_add.png" />
+        <resource-file src="src/android/drawable-hdpi/ic_collections_white_24dp.png" target="res/drawable-hdpi/ic_collections_white_24dp.png" />
+        <resource-file src="src/android/drawable-hdpi/ic_delete_white_24dp.png" target="res/drawable-hdpi/ic_delete_white_24dp.png" />
+        <resource-file src="src/android/drawable-hdpi/ic_edit_white_24dp.png" target="res/drawable-hdpi/ic_edit_white_24dp.png" />
+        <resource-file src="src/android/drawable-hdpi/ic_exit_to_app_white_24dp.png" target="res/drawable-hdpi/ic_exit_to_app_white_24dp.png" />
+        <resource-file src="src/android/drawable-hdpi/ic_redo_white_24dp.png" target="res/drawable-hdpi/ic_redo_white_24dp.png" />
+        <resource-file src="src/android/drawable-hdpi/ic_text_format_white_24dp.png" target="res/drawable-hdpi/ic_text_format_white_24dp.png" />
+        <resource-file src="src/android/drawable-hdpi/ic_undo_white_24dp.png" target="res/drawable-hdpi/ic_undo_white_24dp.png" />
+
+        <resource-file src="src/android/drawable-mdpi/fab_add.png" target="res/drawable-mdpi/fab_add.png" />
+        <resource-file src="src/android/drawable-mdpi/ic_collections_white_24dp.png" target="res/drawable-mdpi/ic_collections_white_24dp.png" />
+        <resource-file src="src/android/drawable-mdpi/ic_delete_white_24dp.png" target="res/drawable-mdpi/ic_delete_white_24dp.png" />
+        <resource-file src="src/android/drawable-mdpi/ic_edit_white_24dp.png" target="res/drawable-mdpi/ic_edit_white_24dp.png" />
+        <resource-file src="src/android/drawable-mdpi/ic_exit_to_app_white_24dp.png" target="res/drawable-mdpi/ic_exit_to_app_white_24dp.png" />
+        <resource-file src="src/android/drawable-mdpi/ic_redo_white_24dp.png" target="res/drawable-mdpi/ic_redo_white_24dp.png" />
+        <resource-file src="src/android/drawable-mdpi/ic_text_format_white_24dp.png" target="res/drawable-mdpi/ic_text_format_white_24dp.png" />
+        <resource-file src="src/android/drawable-mdpi/ic_undo_white_24dp.png" target="res/drawable-mdpi/ic_undo_white_24dp.png" />
+
+        <resource-file src="src/android/drawable-xhdpi/fab_add.png" target="res/drawable-xhdpi/fab_add.png" />
+        <resource-file src="src/android/drawable-xhdpi/ic_collections_white_24dp.png" target="res/drawable-xhdpi/ic_collections_white_24dp.png" />
+        <resource-file src="src/android/drawable-xhdpi/ic_delete_white_24dp.png" target="res/drawable-xhdpi/ic_delete_white_24dp.png" />
+        <resource-file src="src/android/drawable-xhdpi/ic_edit_white_24dp.png" target="res/drawable-xhdpi/ic_edit_white_24dp.png" />
+        <resource-file src="src/android/drawable-xhdpi/ic_exit_to_app_white_24dp.png" target="res/drawable-xhdpi/ic_exit_to_app_white_24dp.png" />
+        <resource-file src="src/android/drawable-xhdpi/ic_redo_white_24dp.png" target="res/drawable-xhdpi/ic_redo_white_24dp.png" />
+        <resource-file src="src/android/drawable-xhdpi/ic_text_format_white_24dp.png" target="res/drawable-xhdpi/ic_text_format_white_24dp.png" />
+        <resource-file src="src/android/drawable-xhdpi/ic_undo_white_24dp.png" target="res/drawable-xhdpi/ic_undo_white_24dp.png" />
+
+        <resource-file src="src/android/drawable-xxhdpi/fab_add.png" target="res/drawable-xxhdpi/fab_add.png" />
+        <resource-file src="src/android/drawable-xxhdpi/ic_collections_white_24dp.png" target="res/drawable-xxhdpi/ic_collections_white_24dp.png" />
+        <resource-file src="src/android/drawable-xxhdpi/ic_delete_white_24dp.png" target="res/drawable-xxhdpi/ic_delete_white_24dp.png" />
+        <resource-file src="src/android/drawable-xxhdpi/ic_edit_white_24dp.png" target="res/drawable-xxhdpi/ic_edit_white_24dp.png" />
+        <resource-file src="src/android/drawable-xxhdpi/ic_exit_to_app_white_24dp.png" target="res/drawable-xxhdpi/ic_exit_to_app_white_24dp.png" />
+        <resource-file src="src/android/drawable-xxhdpi/ic_redo_white_24dp.png" target="res/drawable-xxhdpi/ic_redo_white_24dp.png" />
+        <resource-file src="src/android/drawable-xxhdpi/ic_text_format_white_24dp.png" target="res/drawable-xxhdpi/ic_text_format_white_24dp.png" />
+        <resource-file src="src/android/drawable-xxhdpi/ic_undo_white_24dp.png" target="res/drawable-xxhdpi/ic_undo_white_24dp.png" />
+
+        <resource-file src="src/android/drawable-xxxhdpi/ic_collections_white_24dp.png" target="res/drawable-xxxhdpi/ic_collections_white_24dp.png" />
+        <resource-file src="src/android/drawable-xxxhdpi/ic_delete_white_24dp.png" target="res/drawable-xxxhdpi/ic_delete_white_24dp.png" />
+        <resource-file src="src/android/drawable-xxxhdpi/ic_edit_white_24dp.png" target="res/drawable-xxxhdpi/ic_edit_white_24dp.png" />
+        <resource-file src="src/android/drawable-xxxhdpi/ic_exit_to_app_white_24dp.png" target="res/drawable-xxxhdpi/ic_exit_to_app_white_24dp.png" />
+        <resource-file src="src/android/drawable-xxxhdpi/ic_redo_white_24dp.png" target="res/drawable-xxxhdpi/ic_redo_white_24dp.png" />
+        <resource-file src="src/android/drawable-xxxhdpi/ic_text_format_white_24dp.png" target="res/drawable-xxxhdpi/ic_text_format_white_24dp.png" />
+        <resource-file src="src/android/drawable-xxxhdpi/ic_undo_white_24dp.png" target="res/drawable-xxxhdpi/ic_undo_white_24dp.png" />
+
+
+        <resource-file src="src/android/values/colors.xml" target="res/values/colors.xml" />
+        <resource-file src="src/android/values/dimens.xml" target="res/values/dimens.xml" />
+        <resource-file src="src/android/values/strings.xml" target="res/values/strings.xml" />
+        <resource-file src="src/android/values/styles.xml" target="res/values/styles.xml" />
 
     </platform>
 

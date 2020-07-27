@@ -5,7 +5,7 @@
  * Released under the MIT license
  */
 
-package com.formpigeon.cordova.plugin.cordovaFormSketchPlugin;
+package com.formpigeon.sketch;
 
 import java.io.ByteArrayOutputStream;
 import java.util.List;
@@ -480,8 +480,10 @@ public class CanvasView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        // Before "drawPath"
-        canvas.drawColor(this.baseColor);
+        
+        if(drawGridEnabled) {
+            this.drawGrid(canvas);
+        }
 
 
         for (int i = 0; i < this.historyPointer; i++) {
@@ -544,10 +546,6 @@ public class CanvasView extends View {
             }
 
 
-        }
-
-        if(drawGridEnabled) {
-            this.drawGrid(canvas);
         }
 
         canvas.save();

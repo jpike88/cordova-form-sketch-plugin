@@ -1,4 +1,4 @@
-package com.formpigeon.cordova.plugin.cordovaFormSketchPlugin;
+package com.formpigeon.sketch;
 
 /**
  * Created by joshua on 11/10/16.

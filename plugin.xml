@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-form-sketch-plugin" version="0.0.1">
-    <name>AquipaFormSketchPlugin</name>
+    <name>formpigeonFormSketchPlugin</name>
 
-    <description>Aquipa form sketch plugin.</description>
+    <description>formpigeon form sketch plugin.</description>
     <license>MIT</license>
 
     <keywords>cordova,android,toast,message,alert</keywords>
@@ -17,11 +17,22 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="cordovaFormSketchPlugin">
-                <param name="android-package" value="com.aquipa.cordova.plugin.cordovaFormSketchPlugin" />
+                <param name="android-package" value="com.formpigeon.cordova.plugin.cordovaFormSketchPlugin" />
             </feature>
         </config-file>
 
-        <source-file src="src/android/cordovaFormSketchPlugin.java" target-dir="src/com/aquipa/cordova/plugin" />
+        <source-file src="src/android/cordovaFormSketchPlugin.java" target-dir="src/com/formpigeon/cordova/plugin" />
+        <source-file src="src/android/CanvasView.java" target-dir="src/com/formpigeon/cordova/plugin" />
+        <source-file src="src/android/ImageAdapter.java" target-dir="src/com/formpigeon/cordova/plugin" />
+        <source-file src="src/android/ImageCaption.java" target-dir="src/com/formpigeon/cordova/plugin" />
+        <source-file src="src/android/ResultIPC.java" target-dir="src/com/formpigeon/cordova/plugin" />
+        <source-file src="src/android/SketchActivity.java" target-dir="src/com/formpigeon/cordova/plugin" />
+        <source-file src="src/android/StampActivity.java" target-dir="src/com/formpigeon/cordova/plugin" />
+        <source-file src="src/android/StampBitmap.java" target-dir="src/com/formpigeon/cordova/plugin" />
+        <source-file src="src/android/StartingBitmap.java" target-dir="src/com/formpigeon/cordova/plugin" />
+        <source-file src="src/android/TextStamp.java" target-dir="src/com/formpigeon/cordova/plugin" />
+        <source-file src="src/android/ZoomableViewGroup.java" target-dir="src/com/formpigeon/cordova/plugin" />
+
     </platform>
 
     <platform name="ios">

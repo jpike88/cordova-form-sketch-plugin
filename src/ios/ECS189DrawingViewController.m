@@ -902,6 +902,7 @@
         
         CGRect rect = CGRectMake(tempPoint.x, tempPoint.y - 20, 200, 44);
         UILabel *text = [[UILabel alloc] initWithFrame:rect];
+        text.textColor = [UIColor blackColor];
         text.text = _activeTextString;
         [text sizeToFit];
         [_collection addObject:text];

@@ -20,8 +20,10 @@ public class cordovaFormSketchPlugin extends CordovaPlugin {
     
     @Override
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
-        final Context context=this.cordova.getActivity().getApplicationContext();
+        final Context context=cordova.getActivity().getApplicationContext();
         this.cbc = callbackContext;
+
+
 
         // start sketch.
 
@@ -32,6 +34,7 @@ public class cordovaFormSketchPlugin extends CordovaPlugin {
         if (action.equals("startSketch")) {
 
             Intent intent = new Intent(context, com.formpigeon.sketch.SketchActivity.class);
+
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
             String existingImage = (String)data.get(0);
@@ -44,10 +47,10 @@ public class cordovaFormSketchPlugin extends CordovaPlugin {
 
             intent.putExtra("stampTitles", json2.toString());
             intent.putExtra("existingImageString", existingImage);
-            intent.setPackage(this.cordova.getActivity().getApplicationContext().getPackageName());
+//            intent.setPackage(this.cordova.getActivity().getApplicationContext().getPackageName());
 
             intent.setFlags(0);
-            this.cordova.startActivityForResult((CordovaPlugin) this, intent, 0x0ba7c0de);
+            this.cordova.getActivity().startActivityForResult(intent, 0);
             return true;
 
         } else if (action.equals("loadStamp")) {

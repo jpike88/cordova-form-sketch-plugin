@@ -66,6 +66,7 @@ public class SketchActivity extends CordovaActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
+        this.setTheme(R.style.Theme_AppCompat_Light);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sketch_activity);
 

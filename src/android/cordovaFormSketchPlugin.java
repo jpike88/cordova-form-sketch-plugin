@@ -50,7 +50,7 @@ public class cordovaFormSketchPlugin extends CordovaPlugin {
 //            intent.setPackage(this.cordova.getActivity().getApplicationContext().getPackageName());
 
             intent.setFlags(0);
-            this.cordova.getActivity().startActivityForResult(intent, 0);
+            this.cordova.startActivityForResult(this, intent, 0);
             return true;
 
         } else if (action.equals("loadStamp")) {

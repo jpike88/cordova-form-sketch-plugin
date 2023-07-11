@@ -98,12 +98,6 @@
         <resource-file src="src/android/drawable-xxxhdpi/ic_text_format_white_24dp.png" target="res/drawable-xxxhdpi/ic_text_format_white_24dp.png" />
         <resource-file src="src/android/drawable-xxxhdpi/ic_undo_white_24dp.png" target="res/drawable-xxxhdpi/ic_undo_white_24dp.png" />
 
-
-        <resource-file src="src/android/values/colors.xml" target="res/values/colors.xml" />
-        <resource-file src="src/android/values/dimens.xml" target="res/values/dimens.xml" />
-        <resource-file src="src/android/values/strings.xml" target="res/values/strings.xml" />
-        <resource-file src="src/android/values/styles.xml" target="res/values/styles.xml" />
-
     </platform>
 
     <platform name="ios">
